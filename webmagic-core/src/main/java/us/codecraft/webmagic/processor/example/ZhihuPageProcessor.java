@@ -31,6 +31,7 @@ public class ZhihuPageProcessor implements PageProcessor {
     }
 
     public static void main(String[] args) {
-        Spider.create(new ZhihuPageProcessor()).addUrl("https://www.zhihu.com/explore").run();
+        Spider.create(new ZhihuPageProcessor()).addUrl("https://www.zhihu.com/explore")
+                .run();
     }
 }

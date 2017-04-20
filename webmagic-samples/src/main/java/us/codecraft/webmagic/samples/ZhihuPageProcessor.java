@@ -4,6 +4,7 @@ import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.pipeline.FilePipeline;
+import us.codecraft.webmagic.pipeline.JsonFilePipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.selector.Html;
 
@@ -54,7 +55,7 @@ public class ZhihuPageProcessor implements PageProcessor {
     public static void main(String[] args) {
         Spider.create(new ZhihuPageProcessor()).
                 addUrl("http://www.zhihu.com/search?type=question&q=java").
-                addPipeline(new FilePipeline("D:\\webmagic\\")).
+                addPipeline(new JsonFilePipeline("D:\\webmagic\\")).
                 thread(5).
                 run();
     }

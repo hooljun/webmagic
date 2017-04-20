@@ -3,6 +3,7 @@ package us.codecraft.webmagic.samples;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
+import us.codecraft.webmagic.pipeline.JsonFilePipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
 
 /**
@@ -43,6 +44,7 @@ public class SinaBlogProcessor implements PageProcessor {
 
     public static void main(String[] args) {
         Spider.create(new SinaBlogProcessor()).addUrl("http://blog.sina.com.cn/s/articlelist_1487828712_0_1.html")
-                .run();
+//        .addPipeline(new JsonFilePipeline("D:\\webmagic\\"))
+        .run();
     }
 }
