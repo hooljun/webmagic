@@ -21,17 +21,14 @@ class Com58PageProcesser implements PageProcessor {
 
     //http://bj.58.com/zufang/?PGTID=0d300008-0000-1195-ed4a-f22edff56bc9&ClickID=4
     public static final String URL_LIST = "http://bj\\.58\\.com/zufang/(pn\\d+){0,}";
-    //http://jxjump.58.com/service?target=INKicKZPP1XJ2FI5AKZJ7lFm4eEH5-ItybNoIgHkC-&local=1&pubid=9911286&apptype=0&psid=197835139195647721643738728&entinfo=29604508553808_0&cookie=||https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3DAP6jzDmwrXmMNVeOSHmvo0pKLlCt0OcZQwaEbqdWX87%26ck%3D7062.1.95.239.156.239.156.2%26shh%3Dwww.baidu.com%26sht%3Dmonline_3_dg%26wd%3D%26eqid%3Da9ee819d0000af020000000458f861b4|pPqsrVg375tBKDv oqxsTA==
-    //http://bj.58.com/zufang/29604508553808x.shtml?psid=197835139195647721643738728&iuType=gz_2&ClickID=5&cookie=||https://www.baidu.com/link?url=AP6jzDmwrXmMNVeOSHmvo0pKLlCt0OcZQwaEbqdWX87&ck=7062.1.95.239.156.239.156.2&shh=www.baidu.com&sht=monline_3_dg&wd=&eqid=a9ee819d0000af020000000458f861b4|pPqsrVg375tBKDv%20oqxsTA==&PGTID=0d300008-0000-1974-d09b-18edaef92109&pubid=9911286&apptype=0&entinfo=29604508553808_0&local=1&trackkey=29604508553808_48484619-86d2-486c-8f41-61f132bf782f_20170420160014_1492675214482&fcinfotype=gz
     //public static final String URL_POST = "http://bj\\.58\\.com/zufang/\\w+\\.shtml";
-//    public static final String URL_POST = "http://jxjump\\.58\\.com/service?target=[\\w\\-]+&local=\\d&pubid=\\w+&apptype=\\d&psid=\\w+&entinfo=\\w+&cookie=[\\w\\-||% \\.|=]+";
 //    List<String> strings = page.getHtml().links().regex(".*/yewu/.*").all();
 //    public static final String URL_POST = "\\.*com/service?target=\\.*";
 
     private Site site = TASK.getSite()
             .me()
             .setDomain("bj.58.com")
-            .setSleepTime(1000)
+            .setSleepTime(3000)
             .setUserAgent("Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html) ");
 //            .setUserAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31");
 
@@ -100,7 +97,7 @@ class Com58PageProcesser implements PageProcessor {
 
         Spider.create(new Com58PageProcesser()).addUrl("http://bj.58.com/zufang/")
 //                .addPipeline(new JsonFilePipeline("D:\\bj.58.com\\"))
-                .thread(10)
+                .thread(5)
                   .run();
     }
 }
