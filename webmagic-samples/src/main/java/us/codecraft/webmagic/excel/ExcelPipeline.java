@@ -85,7 +85,7 @@ public class ExcelPipeline extends FilePersistentBase implements Pipeline {
                 try {
 
                     // OutputStream out = new FileOutputStream("E://export2003_a.xls");
-                    File file = new File(path + "\\excel\\export.xls");
+                    File file = new File(path + "export.xls");
                     if(!file.exists()){//追加
                         headers = new String[]{ "标题", "价格", "地址", "房型", "URL" };
                     }

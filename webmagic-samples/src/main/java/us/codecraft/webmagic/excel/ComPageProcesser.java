@@ -74,7 +74,7 @@ class ComPageProcesser implements PageProcessor {
 
         Spider.create(new ComPageProcesser()).addUrl("http://sh.58.com/zufang/")
                 .addPipeline(new ConsolePipeline())
-                .addPipeline(new ExcelPipeline("C:\\Users\\admin\\Desktop"))
+                .addPipeline(new ExcelPipeline("D:\\excel\\"))
                 .thread(10)
                   .run();
 
